@@ -26,10 +26,10 @@ dwm_resources () {
 
 	printf "%s" "$SEP1"
 	if [ "$IDENTIFIER" = "unicode" ]; then
-		printf "💻 RAM %s/%s  CPU %s SSD %s/%s: %s" "$MEMUSED" "$MEMTOT" "$CPU" "$STOUSED" "$STOTOT" "$STOPER"
+		printf "💻 RAM %s/%s  SSD %s/%s: %s" "$MEMUSED" "$MEMTOT" "$STOUSED" "$STOTOT" "$STOPER"
 		#printf " ^=^r  RAM %s/%s  SSD %s/%s: %s" "$MEMUSED" "$MEMTOT" "$CPU" "$STOUSED" "$STOTOT" "$STOPER"
 	else
-		printf "STA | RAM %s/%s CPU %s SSD %s/%s: %s" "$MEMUSED" "$MEMTOT" "$CPU" "$STOUSED" "$STOTOT" "$STOPER"
+		printf "STA | RAM %s/%s SSD %s/%s: %s" "$MEMUSED" "$MEMTOT" "$STOUSED" "$STOTOT" "$STOPER"
 		#printf "STA | RAM %s/%s SSD %s/%s: %s" "$MEMUSED" "$MEMTOT" "$CPU" "$STOUSED" "$STOTOT" "$STOPER"
 	fi
 	printf "%s\n" "$SEP2"
