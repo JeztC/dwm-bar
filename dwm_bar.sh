@@ -38,11 +38,11 @@ export SEP2=" | "
 #. "$DIR/bar-functions/dwm_mpc.sh"
 #. "$DIR/bar-functions/dwm_networkmanager.sh"
 . "$DIR/bar-functions/dwm_pulse.sh"
+. "$DIR/bar-functions/dwm_weather.sh"
 . "$DIR/bar-functions/dwm_resources.sh"
 #. "$DIR/bar-functions/dwm_spotify.sh"
 #. "$DIR/bar-functions/dwm_transmission.sh"
 #. "$DIR/bar-functions/dwm_vpn.sh"
-. "$DIR/bar-functions/dwm_weather.sh"
 #. "$DIR/bar-functions/dwm_network_speed.sh"
 
 parallelize() {
@@ -50,7 +50,7 @@ parallelize() {
     do
         printf "Running parallel processes\n"
         #dwm_networkmanager &
-        #dwm_weather &
+        dwm_weather &
         sleep 5
     done
 }
@@ -87,12 +87,14 @@ do
    
     upperbar="$upperbar$(dwm_pulse)"
     upperbar="$upperbar$(dwm_resources)"
+    upperbar="$upperbar${__DWM_BAR_WEATHER__}"
     upperbar="$upperbar$(dwm_date)"
+   #upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
     # Append results of each func one by one to the lowerbar string
     lowerbar=""
     
     xsetroot -name "$upperbar"
-    #xsetroot -name "$(dwm_resources)$(dwm_pulse)$(dwm_weather)$(dwm_date)"
+    #xsetroot -name "$(dwm_resources)$(dwm_pulse)$(dwm_date)$(__DWM_BAR_WEATHER__)"
     # Uncomment the line below to enable the lowerbar 
     #xsetroot -name "$upperbar;$lowerbar"
     sleep 1
