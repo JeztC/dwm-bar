@@ -50,7 +50,7 @@ parallelize() {
     do
         printf "Running parallel processes\n"
         #dwm_networkmanager &
-        #dwm_weather &
+        dwm_weather &
         sleep 5
     done
 }
@@ -89,12 +89,12 @@ do
     upperbar="$upperbar$(dwm_resources)"
     upperbar="$upperbar${__DWM_BAR_WEATHER__}"
     upperbar="$upperbar$(dwm_date)"
-   #upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
+    #upperbar="$upperbar${__DWM_BAR_NETWORKMANAGER__}"
     # Append results of each func one by one to the lowerbar string
     lowerbar=""
     
     xsetroot -name "$upperbar"
-    #xsetroot -name "$(dwm_resources)$(dwm_pulse)$(dwm_date)$(__DWM_BAR_WEATHER__)"
+    #xsetroot -name "$(dwm_resources)$(dwm_pulse)$(dwm_date)$(dwm_weather)"
     # Uncomment the line below to enable the lowerbar 
     #xsetroot -name "$upperbar;$lowerbar"
     sleep 1
